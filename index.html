@@ -118,7 +118,7 @@
 <!-- Header -->
 <header>
   <h1>Nathan Sheeran</h1>
-  <p>IT Specialist | Developer | Researcher</p>
+  <p>Researcher | Data Analyst</p>
 </header>
 
 <!-- Main Content -->
@@ -129,4 +129,51 @@
     <p>I hold a BSc in Zoology and an MSc in Biology, with PhD research focused on avian studies. Over the years, I have designed, led, and organized complex experiments, with a strong emphasis on data collection and statistical analysis. My scientific background has honed my analytical thinking and problem-solving skills, which I now wish to apply to IT projects.</p>
   </section>
 
-  <!-- Projects / Research Section
+  <!-- Projects / Research Section -->
+  <section id="projects">
+    <h2>Research & Projects</h2>
+    <ul>
+      <li><strong>Experiment 1:</strong> Investigated neural network behavior under different learning rates. Developed insights on optimization strategies and convergence patterns.</li>
+      <li><strong>Experiment 2:</strong> Conducted a longitudinal study on data analysis methods for large genomic datasets, comparing performance across multiple pipelines.</li>
+      <li><strong>Experiment 3:</strong> Designed and tested algorithms for predicting chemical compound interactions with protein targets.</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:nathan@example.com">nathan@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/nathan1sheeran">github.com/nathan1sheeran</a></p>
+    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Nathan Sheeran
+</footer>
+
+<script>
+  // Scroll highlight for nav links
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 90; // offset for fixed nav
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
