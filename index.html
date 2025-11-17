@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathan Sheeran Portfolio</title>
+  <title>Nathan Sheeran | IT Portfolio</title>
   <style>
     /* General styles */
     body {
@@ -17,15 +17,18 @@
     }
 
     a {
-      color: #fff;
+      color: #0077cc;
       text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
 
     /* Navigation bar */
     nav {
       position: fixed;
       width: 100%;
-      background-color: #555;
+      background-color: #444; /* dark grey */
       top: 0;
       left: 0;
       padding: 10px 0;
@@ -36,16 +39,17 @@
       margin: 0 15px;
       font-weight: bold;
       padding: 5px 10px;
+      color: #fff;
       transition: background 0.3s, color 0.3s;
     }
     nav a.active {
-      background-color: #4CAF50;
+      background-color: #888; /* lighter grey highlight */
       border-radius: 4px;
     }
 
     /* Header */
     header {
-      background-color: #ccc;
+      background-color: #ccc; /* light grey */
       color: #333;
       text-align: center;
       padding: 120px 20px 60px; /* extra top padding for nav */
@@ -70,9 +74,9 @@
       scroll-margin-top: 80px; /* offset for fixed nav */
     }
     section h2 {
-      color: #555;
+      color: #444;
       margin-bottom: 15px;
-      border-bottom: 2px solid #ddd;
+      border-bottom: 1px solid #ddd;
       padding-bottom: 5px;
     }
     ul {
@@ -107,14 +111,14 @@
 <!-- Navigation Bar -->
 <nav id="navbar">
   <a href="#about">About</a>
-  <a href="#research">Research & Projects</a>
+  <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <!-- Header -->
 <header>
-  <h1>Welcome to My Portfolio</h1>
-  <p>Hi, I'm Nathan Sheeran, a web developer and researcher.</p>
+  <h1>Nathan Sheeran</h1>
+  <p>IT Specialist | Developer | Researcher</p>
 </header>
 
 <!-- Main Content -->
@@ -122,54 +126,7 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m passionate about building clean, minimal websites and conducting research in [Your Field]. I enjoy solving problems, writing code, and sharing knowledge through projects and experiments.</p>
+    <p>I am an IT professional focused on software development, system architecture, and research in emerging technologies. I enjoy solving complex technical problems, building efficient solutions, and contributing to IT innovation.</p>
   </section>
 
-  <!-- Research / Projects Section -->
-  <section id="research">
-    <h2>Research & Projects</h2>
-    <ul>
-      <li><strong>Experiment 1:</strong> Investigated neural network behavior under different learning rates. Developed insights on optimization strategies and convergence patterns.</li>
-      <li><strong>Experiment 2:</strong> Conducted a longitudinal study on data analysis methods for large genomic datasets, comparing performance across multiple pipelines.</li>
-      <li><strong>Experiment 3:</strong> Designed and tested algorithms for predicting chemical compound interactions with protein targets.</li>
-    </ul>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:nathan@example.com">nathan@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/nathan1sheeran">github.com/nathan1sheeran</a></p>
-    <p>LinkedIn: <a href="#">Your LinkedIn</a></p>
-  </section>
-</main>
-
-<!-- Footer -->
-<footer>
-  &copy; 2025 Nathan Sheeran
-</footer>
-
-<script>
-  // Scroll highlight for nav links
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 90; // offset for fixed nav
-      if (scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
+  <!-- Projects / Research Section
