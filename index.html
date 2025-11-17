@@ -1,137 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathan Sheeran | IT Portfolio</title>
-  <style>
-    /* General styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f7f7f7;
-      color: #333;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nathan Sheeran | IT Portfolio</title>
+<style>
+  /* General styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #1e1e1e; /* dark background */
+    color: #f0f0f0; /* light text */
+    scroll-behavior: smooth;
+  }
+  a { color: #00bfff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+  /* Navigation bar */
+  nav {
+    position: fixed;
+    width: 100%;
+    background-color: #111;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    z-index: 100;
+    text-align: center;
+  }
+  nav a {
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 5px 10px;
+    color: #fff;
+    transition: background 0.3s, color 0.3s;
+  }
+  nav a.active {
+    background-color: #333;
+    border-radius: 4px;
+  }
 
-    /* Navigation bar */
-    nav {
-      position: fixed;
-      width: 100%;
-      background-color: #444; /* dark grey */
-      top: 0;
-      left: 0;
-      padding: 10px 0;
-      z-index: 100;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 15px;
-      font-weight: bold;
-      padding: 5px 10px;
-      color: #fff;
-      transition: background 0.3s, color 0.3s;
-    }
-    nav a.active {
-      background-color: #888; /* lighter grey highlight */
-      border-radius: 4px;
-    }
+  /* Header */
+  header {
+    background-color: #2b2b2b;
+    text-align: center;
+    padding: 120px 20px 60px;
+  }
+  header h1 { margin: 0; font-size: 3rem; color: #00bfff; }
+  header p { margin-top: 10px; font-size: 1.2rem; color: #ccc; }
 
-    /* Header */
-    header {
-      background-color: #ccc; /* light grey */
-      color: #333;
-      text-align: center;
-      padding: 120px 20px 60px; /* extra top padding for nav */
-    }
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-    }
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-    }
+  /* Main content */
+  main { max-width: 900px; margin: auto; padding: 20px; }
+  section { margin-bottom: 60px; scroll-margin-top: 80px; }
+  section h2 { color: #00bfff; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+  ul { padding-left: 1rem; }
+  li { margin-bottom: 10px; }
 
-    /* Main content */
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    section {
-      margin-bottom: 60px;
-      scroll-margin-top: 80px; /* offset for fixed nav */
-    }
-    section h2 {
-      color: #444;
-      margin-bottom: 15px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-    }
-    ul {
-      padding-left: 1rem;
-    }
-    li {
-      margin-bottom: 10px;
-    }
+  /* Collapsible projects */
+  .collapsible {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .active, .collapsible:hover { background-color: #444; }
+  .content {
+    padding: 0 15px;
+    display: none;
+    overflow: hidden;
+    background-color: #2b2b2b;
+    margin-bottom: 10px;
+  }
 
-    /* Collapsible projects */
-    .collapsible {
-      background-color: #eee;
-      cursor: pointer;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 1rem;
-      margin-bottom: 5px;
-    }
-    .active, .collapsible:hover {
-      background-color: #ddd;
-    }
-    .content {
-      padding: 0 15px;
-      display: none;
-      overflow: hidden;
-      background-color: #f9f9f9;
-      margin-bottom: 10px;
-    }
+  /* Footer */
+  footer { text-align: center; background-color: #111; color: #ccc; padding: 20px; }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      background-color: #333;
-      color: white;
-      padding: 20px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 5px 0;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  @media (max-width:600px) { nav a { display:block; margin:5px 0; } header h1 { font-size:2rem; } }
+</style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
 <nav id="navbar">
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
@@ -142,199 +97,135 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- Header -->
 <header>
   <h1>Nathan Sheeran</h1>
   <p>Researcher | Data Analyst</p>
 </header>
 
-<!-- Main Content -->
 <main>
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I hold a BSc in Zoology and an MSc in Biology, with PhD research focused on avian studies. Over the years, I have designed, led, and organized complex experiments, with a strong emphasis on data collection and statistical analysis. My scientific background has honed my analytical thinking and problem-solving skills, which I now wish to apply to IT projects.</p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I hold a BSc in Zoology and an MSc in Biology, with PhD research focused on avian studies. Over the years, I have designed, led, and organized complex experiments, with a strong emphasis on data collection and statistical analysis. My scientific background has honed my analytical thinking and problem-solving skills, which I now wish to apply to IT projects.</p>
+</section>
 
-  <!-- Skills Section -->
-  <section id="skills">
-    <h2>Skills</h2>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li><strong>Programming languages:</strong> R</li>
+    <li><strong>Tools:</strong> RStudio, PAST, Excel, Git</li>
+    <li><strong>Soft skills:</strong> Teamwork, problem solving, attention to detail, time management</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Research & Projects</h2>
+
+  <button class="collapsible"><strong>PhD Project: Species-specific foraging methods influence the dominance hierarchy in migrating waders</strong></button>
+  <div class="content">
+    <p><strong>Description:</strong></p>
+    <ul><li>Studied the effect of species-specific foraging methods on dominance hierarchies in migrating waders.</li></ul>
+    <p><strong>Technologies used:</strong></p>
+    <ul><li>RStudio</li><li>PAST</li><li>Database: Excel</li></ul>
+    <p><strong>My role:</strong></p>
     <ul>
-      <li><strong>Programming languages:</strong> R</li>
-      <li><strong>Tools:</strong> RStudio, PAST, Excel, Git</li>
-      <li><strong>Soft skills:</strong> Teamwork, problem solving, attention to detail, time management</li>
+      <li>Designed the experiment</li><li>Recruited students</li><li>Time management</li>
+      <li>Data collection and storage</li><li>Statistical analysis</li><li>Data visualization</li>
+      <li>Production of a scientific paper</li><li>Presentation at IWSG conference</li>
     </ul>
-  </section>
+    <p><strong>Outcome:</strong></p>
+    <ul><li>Paper under review</li><li>Novel results regarding wader behaviours</li><li>Conference presentation</li></ul>
+  </div>
 
-  <!-- Projects / Research Section -->
-  <section id="projects">
-    <h2>Research & Projects</h2>
-    
-    <!-- PhD Project -->
-    <button class="collapsible"><strong>PhD Project: Species-specific foraging methods influence the dominance hierarchy in migrating waders</strong></button>
-    <div class="content">
-      <p><strong>Description:</strong></p>
-      <ul>
-        <li>Studied the effect of species-specific foraging methods on dominance hierarchies in migrating waders.</li>
-      </ul>
-      <p><strong>Technologies used:</strong></p>
-      <ul>
-        <li>RStudio</li>
-        <li>PAST</li>
-        <li>Database: Excel</li>
-      </ul>
-      <p><strong>My role:</strong></p>
-      <ul>
-        <li>Designed the experiment</li>
-        <li>Recruited students</li>
-        <li>Time management</li>
-        <li>Data collection and storage</li>
-        <li>Statistical analysis</li>
-        <li>Data visualization</li>
-        <li>Production of a scientific paper</li>
-        <li>Presentation of results at the International Wader Study Group (IWSG) conference</li>
-      </ul>
-      <p><strong>Outcome:</strong></p>
-      <ul>
-        <li>Scientific paper currently under review</li>
-        <li>Novel results regarding wader behaviours</li>
-        <li>Conference presentation</li>
-      </ul>
-    </div>
-
-    <!-- Masters Project -->
-    <button class="collapsible"><strong>Masters Project: The species-specific rate of mass gain in juvenile waders during southward migration under ad libitum feeding conditions</strong></button>
-    <div class="content">
-      <p><strong>Description:</strong></p>
-      <ul>
-        <li>Studied the species-specific rate of mass gain in juvenile waders during southward migration under ad libitum feeding conditions.</li>
-      </ul>
-      <p><strong>Technologies used:</strong></p>
-      <ul>
-        <li>RStudio</li>
-        <li>Database: Excel</li>
-      </ul>
-      <p><strong>My role:</strong></p>
-      <ul>
-        <li>Aided in the collection of wild birds</li>
-        <li>Aided in the care of birds in captivity</li>
-        <li>Data collection and storage</li>
-        <li>Statistical analysis</li>
-        <li>Masters thesis</li>
-      </ul>
-      <p><strong>Outcome:</strong></p>
-      <ul>
-        <li>Production of a published scientific paper</li>
-      </ul>
-      <p><strong>Link:</strong></p>
-      <ul>
-        <li><a href="https://www.researchgate.net/publication/396906730_The_species-specific_rate_of_mass_gain_in_juvenile_waders_during_southward_migration_under_ad_libitum_feeding_conditions" target="_blank">ResearchGate Publication</a></li>
-      </ul>
-    </div>
-
-    <!-- Bachelors Project -->
-    <button class="collapsible"><strong>Bachelors Project: Daily behavioural differences of captive primates and meerkats and the identification of stereotypic behaviours</strong></button>
-    <div class="content">
-      <p><strong>Description:</strong></p>
-      <ul>
-        <li>Studied daily behavioural differences of captive primates and meerkats, including identification of stereotypic behaviours.</li>
-      </ul>
-      <p><strong>Technologies used:</strong></p>
-      <ul>
-        <li>RStudio</li>
-        <li>SPSS</li>
-      </ul>
-      <p><strong>My role:</strong></p>
-      <ul>
-        <li>Designed the experiment</li>
-        <li>Data collection and storage</li>
-        <li>Statistical analysis</li>
-        <li>Data visualization</li>
-        <li>Production of BSc thesis</li>
-      </ul>
-      <p><strong>Outcome:</strong></p>
-      <ul>
-        <li>Completed Bachelors studies</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education">
-    <h2><strong>Education</strong></h2>
+  <button class="collapsible"><strong>Masters Project: The species-specific rate of mass gain in juvenile waders during southward migration under ad libitum feeding conditions</strong></button>
+  <div class="content">
+    <p><strong>Description:</strong></p>
+    <ul><li>Studied the species-specific rate of mass gain in juvenile waders during southward migration under ad libitum feeding conditions.</li></ul>
+    <p><strong>Technologies used:</strong></p>
+    <ul><li>RStudio</li><li>Database: Excel</li></ul>
+    <p><strong>My role:</strong></p>
     <ul>
-      <li>PhD studies (University of Gdańsk)</li>
-      <li>Masters (University of Gdańsk)</li>
-      <li>Bachelors degree (University College Cork)</li>
+      <li>Aided in collection of wild birds</li><li>Aided in care of birds</li>
+      <li>Data collection and storage</li><li>Statistical analysis</li><li>Masters thesis</li>
     </ul>
-  </section>
+    <p><strong>Outcome:</strong></p>
+    <ul><li>Published scientific paper</li></ul>
+    <p><strong>Link:</strong></p>
+    <ul><li><a href="https://www.researchgate.net/publication/396906730_The_species-specific_rate_of_mass_gain_in_juvenile_waders_during_southward_migration_under_ad_libitum_feeding_conditions" target="_blank">ResearchGate Publication</a></li></ul>
+  </div>
 
-  <!-- Grant Award Section -->
-  <section id="grant">
-    <h2><strong>Grant Award</strong></h2>
+  <button class="collapsible"><strong>Bachelors Project: Daily behavioural differences of captive primates and meerkats and the identification of stereotypic behaviours</strong></button>
+  <div class="content">
+    <p><strong>Description:</strong></p>
+    <ul><li>Studied daily behavioural differences of captive primates and meerkats, including identification of stereotypic behaviours.</li></ul>
+    <p><strong>Technologies used:</strong></p>
+    <ul><li>RStudio</li><li>SPSS</li></ul>
+    <p><strong>My role:</strong></p>
     <ul>
-      <li>Ugrant start awarded from the University of Gdańsk</li>
+      <li>Designed the experiment</li><li>Data collection and storage</li>
+      <li>Statistical analysis</li><li>Data visualization</li><li>BSc thesis</li>
     </ul>
-  </section>
+    <p><strong>Outcome:</strong></p>
+    <ul><li>Completed Bachelors studies</li></ul>
+  </div>
+</section>
 
-  <!-- Publications Section -->
-  <section id="publications">
-    <h2><strong>Publications</strong></h2>
-    <ul>
-      <li><a href="https://www.researchgate.net/publication/397436891_SPECIES-SPECIFIC_FORAGING_METHODS_INFLUENCE_THE_DOMINANCE_HIERARCHY_IN_MIGRATING_WADERS" target="_blank">Poster presented at the International Wader Study Group</a></li>
-      <li><a href="https://www.researchgate.net/publication/396906730_The_species-specific_rate_of_mass_gain_in_juvenile_waders_during_southward_migration_under_ad_libitum_feeding_conditions" target="_blank">Co-author on published scientific paper</a></li>
-    </ul>
-  </section>
+<section id="education">
+  <h2><strong>Education</strong></h2>
+  <ul>
+    <li>PhD studies (University of Gdańsk)</li>
+    <li>Masters (University of Gdańsk)</li>
+    <li>Bachelors degree (University College Cork)</li>
+  </ul>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:nathan1sheeran@gmail.com">nathan1sheeran@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/nathan1sheeran">github.com/nathan1sheeran</a></p>
-    <p>ResearchGate: <a href="https://www.researchgate.net/profile/Nathan-Sheeran?ev=hdr_xprf">Nathan Sheeran</a></p>
-  </section>
+<section id="grant">
+  <h2><strong>Grant Award</strong></h2>
+  <ul><li>Ugrant start awarded from the University of Gdańsk</li></ul>
+</section>
+
+<section id="publications">
+  <h2><strong>Publications</strong></h2>
+  <ul>
+    <li><a href="https://www.researchgate.net/publication/397436891_SPECIES-SPECIFIC_FORAGING_METHODS_INFLUENCE_THE_DOMINANCE_HIERARCHY_IN_MIGRATING_WADERS" target="_blank">Poster presented at IWSG</a></li>
+    <li><a href="https://www.researchgate.net/publication/396906730_The_species-specific_rate_of_mass_gain_in_juvenile_waders_during_southward_migration_under_ad_libitum_feeding_conditions" target="_blank">Co-author on published paper</a></li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:nathan1sheeran@gmail.com">nathan1sheeran@gmail.com</a></p>
+  <p>GitHub: <a href="https://github.com/nathan1sheeran">github.com/nathan1sheeran</a></p>
+  <p>ResearchGate: <a href="https://www.researchgate.net/profile/Nathan-Sheeran?ev=hdr_xprf">Nathan Sheeran</a></p>
+</section>
+
 </main>
 
-<!-- Footer -->
 <footer>
   &copy; 2025 Nathan Sheeran
 </footer>
 
 <script>
-  // Scroll highlight for nav links
-  const sections = document.querySelectorAll('section');
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 90; // offset for fixed nav
-      if (scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + current) {
-        link.classList.add('active');
-      }
-    });
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 90;
+    if(scrollY >= sectionTop) { current = section.getAttribute('id'); }
   });
+  navLinks.forEach(link => { link.classList.remove('active'); if(link.getAttribute('href') === '#' + current){ link.classList.add('active'); } });
+});
 
-  // Collapsible projects
-  const collapsibles = document.querySelectorAll(".collapsible");
-  collapsibles.forEach(button => {
-    button.addEventListener("click", function() {
-      this.classList.toggle("active");
-      const content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
+// Collapsible projects
+const collapsibles = document.querySelectorAll(".collapsible");
+collapsibles.forEach(button => {
+  button.addEventListener("click", function() {
+    this.classList.toggle("active");
+    const content = this.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
   });
+});
 </script>
-
 </body>
 </html>
+
