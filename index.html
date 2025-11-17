@@ -4,10 +4,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
+  <style>
+    /* Minimal styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #ffffff;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f5f5f5;
+    }
+    main {
+      flex: 1;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2 {
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      padding-left: 1rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
+
+<header>
   <h1>Welcome to My Portfolio</h1>
-  <p>This is my live website!</p>
+  <p>Hi, I'm Nathan Sheeran.</p>
+</header>
+
+<main>
+  <section>
+    <h2>About Me</h2>
+    <p>I hold a BSc in Zoology and an MSc in Biology, with PhD research focused on avian studies. Over the years, I have designed, led, and organized complex experiments, with a strong emphasis on data collection and statistical analysis. My scientific background has honed my analytical thinking and problem-solving skills, which I now wish to apply to IT projects.</p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="#">Project 1</a> – Description</li>
+      <li><a href="#">Project 2</a> – Description</li>
+      <li><a href="#">Project 3</a> – Description</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:nathan@example.com">nathan@example.com</a></p>
+    <p>GitHub: <a href="#">github.com/nathan1sheeran</a></p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Nathan Sheeran
+</footer>
+
 </body>
 </html>
-
